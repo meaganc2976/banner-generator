@@ -1,17 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>jQuery Template</title>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script>
-        $(function(){
-          //code goes here
-          
-        });
-    </script>
-  </head>
-  <body>
-  
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Banner Project</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC|Bangers' rel='stylesheet' type='text/css'>
+  <script>
+    $(function() {
+      $('#button').click(function() {
+        $('#banner').css('display', 'block');
+        var userText = $("#userWord").val();
+        $('#banner').html(userText); //makes the text appear after button clicked
+        var textColor = $("#userColor").val();
+        $('#banner').css("color", textColor); //changes the text color based on the user's input
+        var textFont = $("input[name='font']:checked").val()
+        $('#banner').css("font-family", textFont)
+
+
+      });
+    });
+  </script>
+
+  <style>
+    #banner {
+      text-align: center;
+      margin-top: 150px;
+      font-size: 80px;
+      display: none;
+      letter-spacing: 10px;
+      background-color: white;
+      opacity: 0.8;
+    
+      position:relative;
+      margin-left:-20px;
+    }
+    
+    body {
+      background: linear-gradient(to right, rgba(76, 0, 153, .5), rgba(102, 178, 255, .5)), url("mountains.png");
+      background-size: 17%;
+      color: white;
+      text-shadow: 2px 2px black;
+      font-size: 32px;
+    }
+    /*font-family: 'Bangers', cursive;
+     /*font-family: 'Amatic SC', cursive;
+  </style>
+</head>
+
+<body>
+  <br>
+  <div id="questions">
+    What is your favorite word? Or make up an imaginary word:
+    <input id="userWord" type="text" name="word">
+    <br>
+    <br> What is your favorite color?
+    <input id="userColor" type="text" name="name">
+    <br>
+    <br> Do you prefer fun or sophisticated font?
+    <br>
+    <input type="radio" name="font" id="userFont" value="'Bangers', cursive">Fun
+    <br>
+    <input type="radio" name="font" id="userFont" value="'Amatic SC', cursive">Sophisticated
+    <br>
+    <br>
+    <input id="button" type="submit" value="Submit">
+  </div>
+  <div id="banner">Your Text Here</div>
+
+</body>
+
 </html>
