@@ -5,17 +5,17 @@
   <meta charset="UTF-8">
   <title>Banner Project</title>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Amatic+SC|Bangers' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Amatic+SC|Bangers' rel='stylesheet' type='text/css'>  <!--link for the google fonts-->
   <script>
     $(function() {
-      $('#button').click(function() {
-        $('#banner').css('display', 'block');
-        var userText = $("#userWord").val();
-        $('#banner').html(userText); //makes the text appear after button clicked
-        var textColor = $("#userColor").val();
-        $('#banner').css("color", textColor); //changes the text color based on the user's input
-        var textFont = $("input[name='font']:checked").val()
-        $('#banner').css("font-family", textFont)
+      $('#button').click(function() { //when the submit button is clicked
+        $('#banner').css('display', 'block'); //show the banner/make it visible
+        var userText = $("#userWord").val(); //get the value/what the user types in for what is your favorite word + set it equal to userText
+        $('#banner').html(userText); //make the banner show the text the user put in for favorite word textbox
+        var textColor = $("#userColor").val();// gets the value/ what the user types in the the 2nd textbox asking for favorite color + sets it equal to the variable userColor
+        $('#banner').css("color", textColor); //changes the text color of the text on banner based on the user's input
+        var textFont = $("input[name='font']:checked").val() //gets the value/checks which button the user pressed and gets that value then sets it to the variable textFont
+        $('#banner').css("font-family", textFont) //changes the text on the banner to whatever font the user chose
 
 
       });
@@ -25,39 +25,38 @@
   <style>
     #banner {
       text-align: center;
-      margin-top: 150px;
-      font-size: 85px;
-      display: none;
+      margin-top: 150px; /*moves the banner down/ pushes off the top of the page 150px*/
+      font-size: 85px; /*text size*/
+      display: none; /*makes the banner not visible */
       letter-spacing: 10px;
       background-color: white;
-      opacity: 0.8;
+      opacity: 0.8; /*makes the banner a bit blurry*/
       position:relative;
-      margin-left:-20px;
+      margin-left:-20px; /*makes the banner line up with the left edge of page/no space*/
     }
     
     body {
-      background: linear-gradient(to right, rgba(76, 0, 153, .5), rgba(102, 178, 255, .5)), url("mountains.png");
-      background-size: 17%;
-      color: white;
-      text-shadow: 2px 2px black;
+      background: linear-gradient(to right, rgba(76, 0, 153, .5), rgba(102, 178, 255, .5)), url("mountains.png");/*makes the background a picture of mountains with a linear gradient over it*/
+      background-size: 17%; /*makes the size of the background pctures 17%/ it repeats*/
+      color: white; /*makes the text or questions white*/
+      text-shadow: 2px 2px black; /*gives the text a shadow to make it more visible or stand out*/
       font-size: 32px;
       font-family:Cambria;
     }
     input {
-      font-size:18px;
+      font-size:18px; /*sets the text size in the textbox/what the user types in*/
      
     }
     #button {
-     border-radius:50%;
-     padding: 10px 30px;
+     border-radius:50%; /*makes the submit button circular*/
+     padding: 10px 30px; 
      background-color:white;
-      cursor: pointer;
+      cursor: pointer; /*when the user hovers or clicks the button the regular mouse pointer or arrow will change to the little hand pointer*/
       font-size: 20px;
     }
     #button:hover {
-    background: #356094;
+    background: #356094; /*when the mouse hovers over the submit button it changes the background color of the button*/
     border: solid 1px #2A4E77;
-    text-decoration: none;
 }
 
     /*font-family: 'Bangers', cursive;
@@ -67,10 +66,10 @@
 
 <body>
   <br>
-  <div id="questions">
+  <div id="questions"> <!--groups all the questions together-->
     What is your favorite word? Or make up an imaginary word:
     <input id="userWord" type="text" name="word">
-    <br>
+    <br> <!--creates space between the questions-->
     <br>
     <br> What is your favorite color?
     <input id="userColor" type="text" name="name">
@@ -87,7 +86,7 @@
     <br>
     <input id="button" type="submit" value="Submit">
   </div>
-  <div id="banner">Your Text Here</div>
+  <div id="banner">Your Text Here</div> <!--place or div for the banner-->
 
 </body>
 
